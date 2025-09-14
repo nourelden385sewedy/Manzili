@@ -1,46 +1,58 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\",
+  "WorkspaceRootPath": "D:\\School\\ReCapstone\\Development\\Manzili\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\capstone\\the recapstone\\development\\manzili\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\capstone\\the recapstone\\development\\manzili\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\capstone\\the recapstone\\development\\manzili\\models\\orderitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\orderitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\capstone\\the recapstone\\development\\manzili\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\capstone\\the recapstone\\development\\manzili\\enums\\paymentmethodenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:enums\\paymentmethodenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\capstone\\the recapstone\\development\\manzili\\models\\manzilidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\recapstone\\development\\manzili\\models\\manzilidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\manzilidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\capstone\\the recapstone\\development\\manzili\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\recapstone\\development\\manzili\\models\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\orderservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\recapstone\\development\\manzili\\models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\service.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\recapstone\\development\\manzili\\models\\serviceimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\serviceimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\recapstone\\development\\manzili\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\recapstone\\development\\manzili\\models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\payment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\recapstone\\development\\manzili\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\recapstone\\development\\manzili\\models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\review.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\recapstone\\development\\manzili\\models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\address.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\recapstone\\development\\manzili\\models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\notification.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\recapstone\\development\\manzili\\models\\discountusage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\discountusage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\recapstone\\development\\manzili\\models\\discount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:models\\discount.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\recapstone\\development\\manzili\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\capstone\\the recapstone\\development\\manzili\\enums\\orderstatusenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:enums\\orderstatusenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\capstone\\the recapstone\\development\\manzili\\enums\\paymentstatusenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:enums\\paymentstatusenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|d:\\school\\capstone\\the recapstone\\development\\manzili\\enums\\rolesenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4A400558-281E-4744-8485-CE0C65FCF27E}|Manzili.csproj|solutionrelative:enums\\rolesenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -50,17 +62,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Program.cs",
+              "DocumentMoniker": "D:\\School\\ReCapstone\\Development\\Manzili\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Program.cs",
+              "ToolTip": "D:\\School\\ReCapstone\\Development\\Manzili\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-13T14:47:02.01Z",
               "IsPinned": true,
@@ -68,13 +80,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "ManziliDbContext.cs",
-              "DocumentMoniker": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Models\\ManziliDbContext.cs",
+              "DocumentMoniker": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\ManziliDbContext.cs",
               "RelativeDocumentMoniker": "Models\\ManziliDbContext.cs",
-              "ToolTip": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Models\\ManziliDbContext.cs",
+              "ToolTip": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\ManziliDbContext.cs",
               "RelativeToolTip": "Models\\ManziliDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAYwJQAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-08-13T19:25:41.256Z",
               "IsPinned": true,
@@ -82,28 +94,156 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Payment.cs",
-              "DocumentMoniker": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Models\\Payment.cs",
-              "RelativeDocumentMoniker": "Models\\Payment.cs",
-              "ToolTip": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Models\\Payment.cs",
-              "RelativeToolTip": "Models\\Payment.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAkwB4AAAAkAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwBkAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T07:02:52.232Z",
+              "WhenOpened": "2025-09-13T22:01:00.31Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Service.cs",
+              "DocumentMoniker": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\Service.cs",
+              "RelativeDocumentMoniker": "Models\\Service.cs",
+              "ToolTip": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\Service.cs",
+              "RelativeToolTip": "Models\\Service.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAiwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T22:01:01.943Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Service.cs",
-              "DocumentMoniker": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Models\\Service.cs",
-              "RelativeDocumentMoniker": "Models\\Service.cs",
-              "ToolTip": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Models\\Service.cs",
-              "RelativeToolTip": "Models\\Service.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAkwB8AAAAAAAAAAAAAAA==",
+              "Title": "ServiceImage.cs",
+              "DocumentMoniker": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\ServiceImage.cs",
+              "RelativeDocumentMoniker": "Models\\ServiceImage.cs",
+              "ToolTip": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\ServiceImage.cs",
+              "RelativeToolTip": "Models\\ServiceImage.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-14T06:59:57.257Z",
+              "WhenOpened": "2025-09-13T22:01:03.261Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Order.cs",
+              "DocumentMoniker": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "Models\\Order.cs",
+              "ToolTip": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\Order.cs",
+              "RelativeToolTip": "Models\\Order.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAYwBcAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T22:01:06.541Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderService.cs",
+              "DocumentMoniker": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\OrderService.cs",
+              "RelativeDocumentMoniker": "Models\\OrderService.cs",
+              "ToolTip": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\OrderService.cs",
+              "RelativeToolTip": "Models\\OrderService.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAkwBEAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T22:01:07.718Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Discount.cs",
+              "DocumentMoniker": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\Discount.cs",
+              "RelativeDocumentMoniker": "Models\\Discount.cs",
+              "ToolTip": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\Discount.cs",
+              "RelativeToolTip": "Models\\Discount.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAgwBIAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T22:01:12.245Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DiscountUsage.cs",
+              "DocumentMoniker": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\DiscountUsage.cs",
+              "RelativeDocumentMoniker": "Models\\DiscountUsage.cs",
+              "ToolTip": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\DiscountUsage.cs",
+              "RelativeToolTip": "Models\\DiscountUsage.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAYwBgAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T22:01:14.429Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Payment.cs",
+              "DocumentMoniker": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\Payment.cs",
+              "RelativeDocumentMoniker": "Models\\Payment.cs",
+              "ToolTip": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\Payment.cs",
+              "RelativeToolTip": "Models\\Payment.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAA0wB0AAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T22:01:16.341Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Notification.cs",
+              "DocumentMoniker": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\Notification.cs",
+              "RelativeDocumentMoniker": "Models\\Notification.cs",
+              "ToolTip": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\Notification.cs",
+              "RelativeToolTip": "Models\\Notification.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAkwB0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T22:01:21.804Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Address.cs",
+              "DocumentMoniker": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\Address.cs",
+              "RelativeDocumentMoniker": "Models\\Address.cs",
+              "ToolTip": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\Address.cs",
+              "RelativeToolTip": "Models\\Address.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAswCUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T22:01:23.709Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Review.cs",
+              "DocumentMoniker": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\Review.cs",
+              "RelativeDocumentMoniker": "Models\\Review.cs",
+              "ToolTip": "D:\\School\\ReCapstone\\Development\\Manzili\\Models\\Review.cs",
+              "RelativeToolTip": "Models\\Review.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAowB4AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-13T22:02:09.174Z",
+              "IsPinned": true,
               "EditorCaption": ""
             },
             {
@@ -113,81 +253,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PaymentMethodEnum.cs",
-              "DocumentMoniker": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Enums\\PaymentMethodEnum.cs",
-              "RelativeDocumentMoniker": "Enums\\PaymentMethodEnum.cs",
-              "ToolTip": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Enums\\PaymentMethodEnum.cs",
-              "RelativeToolTip": "Enums\\PaymentMethodEnum.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T22:41:47.029Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "RolesEnum.cs",
-              "DocumentMoniker": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Enums\\RolesEnum.cs",
-              "RelativeDocumentMoniker": "Enums\\RolesEnum.cs",
-              "ToolTip": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Enums\\RolesEnum.cs",
-              "RelativeToolTip": "Enums\\RolesEnum.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T22:41:39.772Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "OrderItems.cs",
-              "DocumentMoniker": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Models\\OrderItems.cs",
-              "RelativeDocumentMoniker": "Models\\OrderItems.cs",
-              "ToolTip": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Models\\OrderItems.cs",
-              "RelativeToolTip": "Models\\OrderItems.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAkwB0AAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T22:47:43.664Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Review.cs",
-              "DocumentMoniker": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Models\\Review.cs",
-              "RelativeDocumentMoniker": "Models\\Review.cs",
-              "ToolTip": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Models\\Review.cs",
-              "RelativeToolTip": "Models\\Review.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAzwBIAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T21:21:04.237Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "OrderStatusEnum.cs",
-              "DocumentMoniker": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Enums\\OrderStatusEnum.cs",
-              "RelativeDocumentMoniker": "Enums\\OrderStatusEnum.cs",
-              "ToolTip": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Enums\\OrderStatusEnum.cs",
-              "RelativeToolTip": "Enums\\OrderStatusEnum.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T23:04:18.929Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PaymentStatusEnum.cs",
-              "DocumentMoniker": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Enums\\PaymentStatusEnum.cs",
-              "RelativeDocumentMoniker": "Enums\\PaymentStatusEnum.cs",
-              "ToolTip": "D:\\School\\Capstone\\The ReCapstone\\Development\\Manzili\\Enums\\PaymentStatusEnum.cs",
-              "RelativeToolTip": "Enums\\PaymentStatusEnum.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-13T23:05:55.1Z"
             }
           ]
         }

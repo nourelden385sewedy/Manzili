@@ -7,28 +7,44 @@ namespace Manzili.Models
     public class Order
     {
         [Key]
-        [Display(Name = "Order ID")]
-        public int OrderID { get; set; }
+        public int Id { get; set; }
 
-        [Display(Name = "Order Date")]
-        public DateTime OrderDate { get; set; } = DateTime.UtcNow;
+        [Column(TypeName = "decimal(10,2)")]
+        public decimal SubTotal { get; set; }   // before discounts + delivery
+
+        [Column(TypeName = "decimal(10,2)")]
+        public decimal DiscountAmount { get; set; } = 0;
+
+        [Column(TypeName = "decimal(10,2)")]
+        public decimal DeliveryFee { get; set; } = 0;
+
+        [Column(TypeName = "decimal(10,2)")]
+        public decimal TotalAmount { get; set; }   // SubTotal - Discount + DeliveryFee
+
+        [Required]
+        public bool IsConfirmed { get; set; } = false; // seller approval
 
         [Required]
         public OrderStatusEnum Status { get; set; } // Pending, Confirmed, Completed, Cancelled
-        
-        [Column(TypeName = "decimal(10,2)")]
-        [Display(Name = "Total Amount")]
-        public decimal TotalAmount { get; set; }
+
 
         // Navigation Property with the Buyer
 
-        [Display(Name = "Buyer ID")]
+        [Required]
         public int BuyerId { get; set; }
         [ForeignKey("BuyerId")]
-        public User Buyer { get; set; }
+        public User Buyer { get; set; } = null!;
+
 
         // Navigation Properties
-        public ICollection<OrderItem> OrderItems { get; set; }
-        public ICollection<Payment> Payments { get; set; }
+        public ICollection<OrderService> OrderServices { get; set; } = new List<OrderService>();
+
+
+        public Payment Payment { get; set; } = null!;
+
+
+        // Audit
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
     }
 }

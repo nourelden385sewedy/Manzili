@@ -6,31 +6,48 @@ namespace Manzili.Models
     public class Review
     {
         [Key]
-        [Display(Name = "Review ID")]
-        public int ReviewId { get; set; }
+        public int Id { get; set; }
+
+        [MaxLength(3000)]
+        public string Comment { get; set; } = null!;
 
         [Range(1, 5)]
-        [Display(Name = "Rating (1-5)")]
-        public int Rating { get; set; } // 1 to 5
+        public int Rating { get; set; }
 
-        [MaxLength(1000)]
-        public string Comment { get; set; }
 
-        [Display(Name = "Review Date")]
-        public DateTime ReviewDate { get; set; } = DateTime.UtcNow;
+        // Navigation Property with the Service
 
-        // Navigation Property with the Buyer
+        [Required]
+        public int ServiceId { get; set; }
+        [ForeignKey("ServiceId")]
+        public Service Service { get; set; } = null!;
 
-        [Display(Name = "Order Item ID")]
-        public int OrderItemId { get; set; }
-        [ForeignKey("OrderItemId")]
-        public OrderItem OrderItem { get; set; }
 
-        // Navigation Property with the Buyer
+        // Navigation Property with the User who left the Review
 
-        [Display(Name = "Reviewer ID")]
-        public int ReviewerId { get; set; }
-        [ForeignKey("ReviewerId")]
-        public User Reviewer { get; set; }
+        [Required]
+        public int UserId { get; set; }   // The buyer who left the review
+
+        [ForeignKey("UserId")]
+        public User Reviewer { get; set; } = null!;
+
+
+        // Audit
+        public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+        public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
     }
 }
+
+/* Future thing
+
+        // For replies: link to parent review
+        public int? ParentReviewId { get; set; } // null = original buyer review, not a reply
+        [ForeignKey("ParentReviewId")]
+        public Review? ParentReview { get; set; }
+
+
+        // Convenience property (not mapped)
+        [NotMapped]
+        public bool IsReply => ParentReviewId != null;
+ 
+*/

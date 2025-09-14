@@ -7,3 +7,13 @@ D:\School\Capstone\The ReCapstone\Development\Manzili\obj\Debug\net8.0\Manzili.c
 D:\School\Capstone\The ReCapstone\Development\Manzili\obj\Debug\net8.0\Manzili.MvcApplicationPartsAssemblyInfo.cache
 D:\School\Capstone\The ReCapstone\Development\Manzili\obj\Debug\net8.0\Manzili.RazorAssemblyInfo.cache
 D:\School\Capstone\The ReCapstone\Development\Manzili\obj\Debug\net8.0\Manzili.RazorAssemblyInfo.cs
+D:\School\ReCapstone\Development\Manzili\obj\Debug\net8.0\Manzili.csproj.AssemblyReference.cache
+D:\School\ReCapstone\Development\Manzili\obj\Debug\net8.0\rpswa.dswa.cache.json
+D:\School\ReCapstone\Development\Manzili\obj\Debug\net8.0\Manzili.GeneratedMSBuildEditorConfig.editorconfig
+D:\School\ReCapstone\Development\Manzili\obj\Debug\net8.0\Manzili.AssemblyInfoInputs.cache
+D:\School\ReCapstone\Development\Manzili\obj\Debug\net8.0\Manzili.AssemblyInfo.cs
+D:\School\ReCapstone\Development\Manzili\obj\Debug\net8.0\Manzili.csproj.CoreCompileInputs.cache
+D:\School\ReCapstone\Development\Manzili\obj\Debug\net8.0\Manzili.MvcApplicationPartsAssemblyInfo.cache
+D:\School\ReCapstone\Development\Manzili\obj\Debug\net8.0\Manzili.RazorAssemblyInfo.cache
+D:\School\ReCapstone\Development\Manzili\obj\Debug\net8.0\Manzili.RazorAssemblyInfo.cs
+D:\School\ReCapstone\Development\Manzili\obj\Debug\net8.0\Manzili.sourcelink.json

@@ -3,7 +3,7 @@
     public enum RolesEnum
     {
         Buyer,
-        Seller,
+        Provider,
         Admin
     }
 }

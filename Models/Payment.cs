@@ -7,8 +7,7 @@ namespace Manzili.Models
     public class Payment
     {
         [Key]
-        [Display(Name = "Payment ID")]
-        public int PaymentId { get; set; }
+        public int Id { get; set; }
 
         [Column(TypeName = "decimal(10,2)")]
         public decimal Amount { get; set; }
@@ -17,20 +16,25 @@ namespace Manzili.Models
         public PaymentMethodEnum PaymentMethod { get; set; } // CreditCard, Cash, PayPal, etc.
 
         [MaxLength(100)]
-        [Display(Name = "Transaction ID")]
         public string TransactionId { get; set; }
-
-        [Display(Name = "Payment Date")]
         public DateTime PaymentDate { get; set; } = DateTime.UtcNow;
 
         [Required]
-        public ServiceStatusEnum Status { get; set; } // Pending, Paid, Failed, Refunded
+        public PaymentStatusEnum Status { get; set; } // Pending, Paid, Failed, Refunded
 
-        // Navigation Property with the Buyer
+        // Navigation Property with the Order
 
-        [Display(Name = "Order ID")]
+        [Required]
         public int OrderId { get; set; }
         [ForeignKey("OrderId")]
-        public Order Order { get; set; }
+        public Order Order { get; set; } = null!;
+
+
+        // Navigation Property with the Buyer who paid
+
+        [Required]
+        public int UserId { get; set; }
+        [ForeignKey("UserId")]
+        public User User { get; set; } = null!;
     }
 }

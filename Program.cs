@@ -16,7 +16,7 @@ builder.Services.AddDbContext<ManziliDbContext>(options =>
 // 3. Services
 
 
-// 4. Add controllers with teh Views
+// 4. Add controllers with the Views
 builder.Services.AddControllersWithViews();
 
 var app = builder.Build();
