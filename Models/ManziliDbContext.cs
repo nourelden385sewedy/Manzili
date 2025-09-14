@@ -17,7 +17,6 @@ namespace Manzili.Models
                 .HasIndex(u => u.Email)
                 .IsUnique();
 
-            // Optional unique code for Discount
             modelBuilder.Entity<Discount>()
                 .HasIndex(d => d.Code)
                 .IsUnique();
@@ -49,7 +48,7 @@ namespace Manzili.Models
             // Relationships & Delete Behavior
             // -------------------------
 
-            // User -> Services
+            // User -> Services (cascade delete services if provider deleted)
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Services)
                 .WithOne(s => s.Provider)
@@ -70,42 +69,42 @@ namespace Manzili.Models
                 .HasForeignKey(d => d.ServiceId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Service -> OrderServices (cascade delete order items, keep orders)
+            // Service -> OrderServices (ServiceId set to NULL when deleted, snapshots preserved)
             modelBuilder.Entity<Service>()
                 .HasMany(s => s.OrderServices)
                 .WithOne(os => os.Service)
                 .HasForeignKey(os => os.ServiceId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.SetNull);
 
-            // Order -> OrderServices
+            // Order -> OrderServices (delete order items if order deleted)
             modelBuilder.Entity<Order>()
                 .HasMany(o => o.OrderServices)
                 .WithOne(os => os.Order)
                 .HasForeignKey(os => os.OrderId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // User (Buyer) -> Orders
+            // User (Buyer) -> Orders (BuyerId set to NULL when user deleted, keep orders/payments)
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Orders)
                 .WithOne(o => o.Buyer)
                 .HasForeignKey(o => o.BuyerId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.SetNull);
 
-            // User -> Reviews
+            // User -> Reviews (delete reviews if user deleted)
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Reviews)
                 .WithOne(r => r.Reviewer)
                 .HasForeignKey(r => r.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // User -> Notifications
+            // User -> Notifications (delete notifications if user deleted)
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Notifications)
                 .WithOne(n => n.User)
                 .HasForeignKey(n => n.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // User -> Addresses
+            // User -> Addresses (delete addresses if user deleted)
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Addresses)
                 .WithOne(a => a.User)
@@ -119,6 +118,13 @@ namespace Manzili.Models
                 .HasForeignKey(u => u.DiscountId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            // DiscountUsage -> User (UserId set to NULL when user deleted, keep usage record)
+            modelBuilder.Entity<DiscountUsage>()
+                .HasOne(u => u.User)
+                .WithMany()
+                .HasForeignKey(u => u.UserId)
+                .OnDelete(DeleteBehavior.SetNull);
+
             // Payment <-> Order (strict 1:1, cascade delete payment if order deleted)
             modelBuilder.Entity<Order>()
                 .HasOne(o => o.Payment)
@@ -126,20 +132,15 @@ namespace Manzili.Models
                 .HasForeignKey<Payment>(p => p.OrderId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Payment -> User (if user deleted, their payments also deleted)
+            // Payment -> User (delete payments if user deleted? keep payments?)
+            // For financial integrity → keep payments, set UserId NULL when user deleted
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Payments)
                 .WithOne(p => p.User)
                 .HasForeignKey(p => p.UserId)
-                .OnDelete(DeleteBehavior.Cascade);
-
-            // OrderService -> Provider (denormalized ProviderId, restrict delete)
-            modelBuilder.Entity<OrderService>()
-                .HasOne(os => os.Service)
-                .WithMany()
-                .HasForeignKey(os => os.ServiceId)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.SetNull);
         }
+
 
         public DbSet<User> Users { get; set; }
         public DbSet<Service> Services { get; set; }

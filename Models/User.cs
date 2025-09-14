@@ -12,10 +12,10 @@ namespace Manzili.Models
         public int Id { get; set; }
 
         [Required, MaxLength(100)]
-        public string FullName { get; set; }
+        public string FullName { get; set; } = null!;
 
         [Required, MaxLength(100), EmailAddress]
-        public string Email { get; set; }
+        public string Email { get; set; } = null!;
 
         [MaxLength(15)]
         [RegularExpression(@"^01\d{9}$", ErrorMessage = "Phone number must be 11 digits and start with 01.")]
@@ -23,7 +23,7 @@ namespace Manzili.Models
         public string? PhoneNumber { get; set; }
 
         [Required, MaxLength(256)]
-        public string PasswordHash { get; set; }
+        public string PasswordHash { get; set; } = null!;
 
         // Enums
 

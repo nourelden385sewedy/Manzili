@@ -28,6 +28,8 @@ namespace Manzili.Models
 
         // MVP Analytics
         public int OrdersCount { get; set; } = 0;
+
+        [Column(TypeName = "decimal(10,2)")]
         public decimal Revenue { get; set; } = 0;
         public int ViewsCount { get; set; } = 0;
 

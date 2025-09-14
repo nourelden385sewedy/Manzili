@@ -16,7 +16,7 @@ namespace Manzili.Models
         public PaymentMethodEnum PaymentMethod { get; set; } // CreditCard, Cash, PayPal, etc.
 
         [MaxLength(100)]
-        public string TransactionId { get; set; }
+        public string TransactionId { get; set; } = null!;
         public DateTime PaymentDate { get; set; } = DateTime.UtcNow;
 
         [Required]
