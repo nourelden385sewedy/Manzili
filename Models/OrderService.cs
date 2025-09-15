@@ -28,8 +28,7 @@ namespace Manzili.Models
 
         // Navigation Property with the Service
 
-        [Required]
-        public int ServiceId { get; set; }
+        public int? ServiceId { get; set; }
         [ForeignKey("ServiceId")]
         public Service Service { get; set; } = null!;
 

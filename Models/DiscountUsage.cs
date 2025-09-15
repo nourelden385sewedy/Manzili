@@ -19,16 +19,15 @@ namespace Manzili.Models
 
         // Navigation property with the User who used the discount
 
-        [Required]
-        public int UserId { get; set; }
+        public int? UserId { get; set; }
         [ForeignKey("UserId")]
         public User User { get; set; } = null!;
 
 
-        // Optional: store order info
-        public int? OrderId { get; set; }
-        [ForeignKey("OrderId")]
-        public Order? Order { get; set; }
+        //// Optional: store order info
+        //public int? OrderId { get; set; }
+        //[ForeignKey("OrderId")]
+        //public Order? Order { get; set; }
 
 
         // Audit

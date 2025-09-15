@@ -29,12 +29,5 @@ namespace Manzili.Models
         [ForeignKey("OrderId")]
         public Order Order { get; set; } = null!;
 
-
-        // Navigation Property with the Buyer who paid
-
-        [Required]
-        public int UserId { get; set; }
-        [ForeignKey("UserId")]
-        public User User { get; set; } = null!;
     }
 }

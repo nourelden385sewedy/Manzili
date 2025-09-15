@@ -4,6 +4,7 @@ using Manzili.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Manzili.Migrations
 {
     [DbContext(typeof(ManziliDbContext))]
-    partial class ManziliDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250914235750_ChangeOnDeleteBehaviors1")]
+    partial class ChangeOnDeleteBehaviors1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -67,7 +70,7 @@ namespace Manzili.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Addresses", (string)null);
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("Manzili.Models.Discount", b =>
@@ -117,7 +120,7 @@ namespace Manzili.Migrations
 
                     b.HasIndex("ServiceId");
 
-                    b.ToTable("Discounts", (string)null);
+                    b.ToTable("Discounts");
                 });
 
             modelBuilder.Entity("Manzili.Models.DiscountUsage", b =>
@@ -143,7 +146,7 @@ namespace Manzili.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("DiscountUsages", (string)null);
+                    b.ToTable("DiscountUsages");
                 });
 
             modelBuilder.Entity("Manzili.Models.Notification", b =>
@@ -177,7 +180,7 @@ namespace Manzili.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Notifications", (string)null);
+                    b.ToTable("Notifications");
                 });
 
             modelBuilder.Entity("Manzili.Models.Order", b =>
@@ -220,7 +223,7 @@ namespace Manzili.Migrations
 
                     b.HasIndex("BuyerId");
 
-                    b.ToTable("Orders", (string)null);
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Manzili.Models.OrderService", b =>
@@ -264,7 +267,7 @@ namespace Manzili.Migrations
 
                     b.HasIndex("ServiceId");
 
-                    b.ToTable("OrderServices", (string)null);
+                    b.ToTable("OrderServices");
                 });
 
             modelBuilder.Entity("Manzili.Models.Payment", b =>
@@ -302,7 +305,7 @@ namespace Manzili.Migrations
                     b.HasIndex("OrderId")
                         .IsUnique();
 
-                    b.ToTable("Payments", (string)null);
+                    b.ToTable("Payments");
                 });
 
             modelBuilder.Entity("Manzili.Models.Review", b =>
@@ -339,7 +342,7 @@ namespace Manzili.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Reviews", (string)null);
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Manzili.Models.Service", b =>
@@ -402,7 +405,7 @@ namespace Manzili.Migrations
 
                     b.HasIndex("ProviderId");
 
-                    b.ToTable("Services", (string)null);
+                    b.ToTable("Services");
                 });
 
             modelBuilder.Entity("Manzili.Models.ServiceImage", b =>
@@ -431,7 +434,7 @@ namespace Manzili.Migrations
 
                     b.HasIndex("ServiceId");
 
-                    b.ToTable("ServiceImages", (string)null);
+                    b.ToTable("ServiceImages");
                 });
 
             modelBuilder.Entity("Manzili.Models.User", b =>
@@ -476,7 +479,7 @@ namespace Manzili.Migrations
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Users", (string)null);
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Manzili.Models.Address", b =>
@@ -579,7 +582,7 @@ namespace Manzili.Migrations
                     b.HasOne("Manzili.Models.User", "Reviewer")
                         .WithMany("Reviews")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict);
+                        .OnDelete(DeleteBehavior.NoAction);
 
                     b.Navigation("Reviewer");
 

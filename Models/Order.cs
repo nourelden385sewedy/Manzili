@@ -30,8 +30,7 @@ namespace Manzili.Models
 
         // Navigation Property with the Buyer
 
-        [Required]
-        public int BuyerId { get; set; }
+        public int? BuyerId { get; set; }
         [ForeignKey("BuyerId")]
         public User Buyer { get; set; } = null!;
 

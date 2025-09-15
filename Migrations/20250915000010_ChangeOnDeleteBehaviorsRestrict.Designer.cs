@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Manzili.Migrations
 {
     [DbContext(typeof(ManziliDbContext))]
-    [Migration("20250914180359_FirstMigration")]
-    partial class FirstMigration
+    [Migration("20250915000010_ChangeOnDeleteBehaviorsRestrict")]
+    partial class ChangeOnDeleteBehaviorsRestrict
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -134,20 +134,15 @@ namespace Manzili.Migrations
                     b.Property<int>("DiscountId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("OrderId")
-                        .HasColumnType("int");
-
                     b.Property<DateTime>("UsedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.HasIndex("DiscountId");
-
-                    b.HasIndex("OrderId");
 
                     b.HasIndex("UserId");
 
@@ -196,7 +191,7 @@ namespace Manzili.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("BuyerId")
+                    b.Property<int?>("BuyerId")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedAt")
@@ -255,7 +250,7 @@ namespace Manzili.Migrations
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
 
-                    b.Property<int>("ServiceId")
+                    b.Property<int?>("ServiceId")
                         .HasColumnType("int");
 
                     b.Property<string>("ServiceTitleAtOrder")
@@ -305,15 +300,10 @@ namespace Manzili.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("OrderId")
                         .IsUnique();
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("Payments");
                 });
@@ -343,7 +333,7 @@ namespace Manzili.Migrations
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("UserId")
+                    b.Property<int?>("UserId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -521,19 +511,12 @@ namespace Manzili.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Manzili.Models.Order", "Order")
-                        .WithMany()
-                        .HasForeignKey("OrderId");
-
                     b.HasOne("Manzili.Models.User", "User")
-                        .WithMany()
+                        .WithMany("DiscountUsage")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.SetNull)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Discount");
-
-                    b.Navigation("Order");
 
                     b.Navigation("User");
                 });
@@ -554,8 +537,7 @@ namespace Manzili.Migrations
                     b.HasOne("Manzili.Models.User", "Buyer")
                         .WithMany("Orders")
                         .HasForeignKey("BuyerId")
-                        .OnDelete(DeleteBehavior.SetNull)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Buyer");
                 });
@@ -571,8 +553,7 @@ namespace Manzili.Migrations
                     b.HasOne("Manzili.Models.Service", "Service")
                         .WithMany("OrderServices")
                         .HasForeignKey("ServiceId")
-                        .OnDelete(DeleteBehavior.SetNull)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.SetNull);
 
                     b.Navigation("Order");
 
@@ -587,15 +568,7 @@ namespace Manzili.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Manzili.Models.User", "User")
-                        .WithMany("Payments")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.SetNull)
-                        .IsRequired();
-
                     b.Navigation("Order");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Manzili.Models.Review", b =>
@@ -609,8 +582,7 @@ namespace Manzili.Migrations
                     b.HasOne("Manzili.Models.User", "Reviewer")
                         .WithMany("Reviews")
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("Reviewer");
 
@@ -667,11 +639,11 @@ namespace Manzili.Migrations
                 {
                     b.Navigation("Addresses");
 
+                    b.Navigation("DiscountUsage");
+
                     b.Navigation("Notifications");
 
                     b.Navigation("Orders");
-
-                    b.Navigation("Payments");
 
                     b.Navigation("Reviews");
 

@@ -25,11 +25,10 @@ namespace Manzili.Models
 
         // Navigation Property with the User who left the Review
 
-        [Required]
-        public int UserId { get; set; }   // The buyer who left the review
+        public int? UserId { get; set; }   // The buyer who left the review
 
         [ForeignKey("UserId")]
-        public User Reviewer { get; set; } = null!;
+        public User? Reviewer { get; set; } = null!;
 
 
         // Audit
