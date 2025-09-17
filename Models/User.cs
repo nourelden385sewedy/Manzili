@@ -39,6 +39,7 @@ namespace Manzili.Models
         public ICollection<Notification> Notifications { get; set; } = new List<Notification>();
         public ICollection<Address> Addresses { get; set; } = new List<Address>();
         public ICollection<DiscountUsage> DiscountUsage { get; set; } = new List<DiscountUsage>();
+        public ICollection<Payment> Payments { get; set; } = new List<Payment>();
 
         // Audit
 

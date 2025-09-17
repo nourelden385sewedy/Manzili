@@ -74,6 +74,12 @@ namespace Manzili.Models
                 .HasForeignKey(a => a.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Payments)
+                .WithOne(p => p.Buyer)
+                .HasForeignKey(p => p.BuyerId)
+                .OnDelete(DeleteBehavior.SetNull);
+
             // User (Buyer) -> Orders
             modelBuilder.Entity<User>()
                 .HasMany(u => u.Orders)

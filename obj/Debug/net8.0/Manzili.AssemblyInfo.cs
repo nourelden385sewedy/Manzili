@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Manzili")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9f0d455c7511baf62fa8375cfde205722bd52ff2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1838e2f7bc8b9caf175a981354bfd0d9816c46e3")]
 [assembly: System.Reflection.AssemblyProductAttribute("Manzili")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Manzili")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
