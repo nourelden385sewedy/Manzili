@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36623.8 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manzili", "Manzili\Manzili.csproj", "{EC537F38-567D-41E8-86DC-B30C2A39F5DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EC537F38-567D-41E8-86DC-B30C2A39F5DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC537F38-567D-41E8-86DC-B30C2A39F5DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC537F38-567D-41E8-86DC-B30C2A39F5DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC537F38-567D-41E8-86DC-B30C2A39F5DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E35EF195-A4BD-4E94-95D2-2AF2942E25CA}
+	EndGlobalSection
+EndGlobal
