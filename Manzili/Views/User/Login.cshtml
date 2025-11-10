@@ -1,0 +1,95 @@
+﻿@model LoginVM
+@{
+    ViewData["Title"] = "Sign In - Manzili";
+    Layout = "_Layout";
+}
+
+<header class="navbar">
+    <div class="logo">Manzili</div>
+    <nav>
+        <ul>
+            <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+            <li><a asp-controller="Home" asp-action="Services">Services</a></li>
+            <li><a href="#"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+            <li><a href="#"><i class="fas fa-user-circle"></i> Profile</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main class="main-content">
+    <section class="sign-in-section">
+        <h2 class="page-title">Sign in to your account</h2>
+        <p class="page-subtitle">Or <a asp-controller="Account" asp-action="Register" class="create-account-link">create a new account</a></p>
+
+        <div class="form-card">
+            <div class="user-type-tabs">
+                <label class="tab-label">
+                    <input type="radio" name="userType" value="buyer" class="tab-radio">
+                    <span class="tab-button"><i class="fas fa-shopping-cart"></i> Buyer</span>
+                </label>
+                <label class="tab-label">
+                    <input type="radio" name="userType" value="seller" class="tab-radio">
+                    <span class="tab-button"><i class="fas fa-store"></i> Seller</span>
+                </label>
+            </div>
+
+            <form class="sign-in-form" method="post" asp-controller="User" asp-action="Login">
+                <div class="form-group">
+                    <label asp-for="Email" class="form-label">Email address</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-envelope input-icon"></i>
+                        <input asp-for="Email" type="email" class="form-input" placeholder="ex. Mohamed@gmail.com" required />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Password" class="form-label">Password</label>
+                    <div class="input-wrapper">
+                        <i class="fas fa-lock input-icon"></i>
+                        <input asp-for="Password" type="password" class="form-input" placeholder="••••••••" required />
+                        <label class="password-toggle">
+                            <input type="checkbox" class="toggle-checkbox">
+                            <i class="fas fa-eye-slash toggle-icon"></i>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-footer">
+                    <label class="remember-checkbox">
+                        <!--asp-for="RememberMe"-->
+                        <input  type="checkbox">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-link">Forgot your password?</a>
+                </div>
+
+                <button type="submit" class="sign-in-btn">Sign In</button>
+            </form>
+
+            <div class="divider"><span>Or continue with</span></div>
+
+            <div class="social-buttons">
+                <button type="button" class="social-btn facebook-btn"><i class="fab fa-facebook-f"></i></button>
+                <button type="button" class="social-btn google-btn"></button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    const passwordInput = document.querySelector('input[name="Password"]');
+    const toggleCheckbox = document.querySelector('.toggle-checkbox');
+    const toggleIcon = document.querySelector('.toggle-icon');
+
+    toggleCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+            passwordInput.type = 'text';
+            toggleIcon.classList.remove('fa-eye-slash');
+            toggleIcon.classList.add('fa-eye');
+        } else {
+            passwordInput.type = 'password';
+            toggleIcon.classList.remove('fa-eye');
+            toggleIcon.classList.add('fa-eye-slash');
+        }
+    });
+</script>

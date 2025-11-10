@@ -1,5 +1,6 @@
 ﻿using Manzili.Models;
 using Manzili.Services.UserService;
+using Manzili.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Manzili.Controllers
@@ -19,12 +20,12 @@ namespace Manzili.Controllers
         }
 
         [HttpGet] // Get: User/Login
-        public async Task<IActionResult> Login() => View();
+        public async Task<IActionResult> Login() => View("Login");
 
         [HttpPost]
-        public async Task<IActionResult> Login(string email,[FromBody] string password)
+        public async Task<IActionResult> Login(LoginVM login)
         {
-            var user = await _userService.LoginAsync(email, password);
+            var user = await _userService.LoginAsync(login);
             if (user == null)
             {
                 ViewBag.Error = "Invalid Credentials";
@@ -40,9 +41,9 @@ namespace Manzili.Controllers
         public async Task<IActionResult> Register() => View();
 
         [HttpPost]
-        public async Task<IActionResult> Register(User user, string password)
+        public async Task<IActionResult> Register(SignUpVM signUpVM, string password)
         {
-            var success = await _userService.RegisterAsync(user, password);
+            var success = await _userService.RegisterAsync(signUpVM, password);
             if (!success)
             {
                 ViewBag.Error = "Email already exists.";

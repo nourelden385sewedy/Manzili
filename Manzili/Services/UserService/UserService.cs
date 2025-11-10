@@ -1,6 +1,7 @@
 ﻿using Manzili.Models;
 using Manzili.Repositories.AddressRepository;
 using Manzili.Repositories.UserRepository;
+using Manzili.ViewModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace Manzili.Services.UserService
@@ -9,7 +10,7 @@ namespace Manzili.Services.UserService
     {
         private readonly IUserRepo _userRepo;
         private readonly IAddressRepo _addressRepo;
-        private readonly PasswordHasher<User> _hasher = new();
+        private readonly PasswordHasher<String> _hasher = new PasswordHasher<string>();
 
         public UserService(IUserRepo userRepo, IAddressRepo addressRepo)
         {
@@ -18,23 +19,32 @@ namespace Manzili.Services.UserService
         }
 
 
-        public async Task<bool> RegisterAsync(User user, string password)
+        public async Task<bool> RegisterAsync(SignUpVM signVm, string password)
         {
-            if (await _userRepo.EmailExists(user.Email))
+            if (await _userRepo.EmailExists(signVm.Email))
                 return false;
 
-            user.PasswordHash = _hasher.HashPassword(user, password);
+            var hash = _hasher.HashPassword(signVm.Email, signVm.Password);
+
+            User user = new User
+            {
+                FullName = signVm.FName + " " + signVm.LName,
+                Email = signVm.Email,
+                PasswordHash = hash,
+                Role = signVm.isSeller ? UserRole.Provider : UserRole.Buyer
+            };
+
             await _userRepo.AddAsync(user);
 
             return true;
         }
 
-        public async Task<User?> LoginAsync(string email, string password)
+        public async Task<User?> LoginAsync(LoginVM login)
         {
-            var user = await _userRepo.GetByEmailAsync(email);
+            var user = await _userRepo.GetByEmailAsync(login.Email);
             if (user == null) return null;
 
-            var result =  _hasher.VerifyHashedPassword(user, user.PasswordHash, password);
+            var result =  _hasher.VerifyHashedPassword(login.Email, user.PasswordHash, login.Password);
             return result == PasswordVerificationResult.Success ? user : null;
         }
 

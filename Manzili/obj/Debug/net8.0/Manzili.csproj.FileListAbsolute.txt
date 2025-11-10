@@ -151,3 +151,4 @@ D:\School\ReCapstone\Development\Manzili\Manzili\bin\Debug\net8.0\Microsoft.Exte
 D:\School\ReCapstone\Development\Manzili\Manzili\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 D:\School\ReCapstone\Development\Manzili\Manzili\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
 D:\School\ReCapstone\Development\Manzili\Manzili\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\School\ReCapstone\Development\Manzili\Manzili\obj\Debug\net8.0\Manzili.sourcelink.json
