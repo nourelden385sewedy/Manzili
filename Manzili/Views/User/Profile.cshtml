@@ -1,0 +1,97 @@
+
+
+@{
+    ViewData["Title"] = "Profile - Manzili";
+    ViewData["ShowFooter"] = true;
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/profile.css">
+}
+
+<main class="my-account-layout">
+    <aside class="sidebar">
+        <nav class="sidebar-nav">
+            <ul>
+                <li class="active"><a asp-page="/Profile"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#"><i class="fas fa-box"></i> Orders</a></li>
+                <li><a href="#"><i class="fas fa-heart"></i> Favorites</a></li>
+                <li><a href="#"><i class="fas fa-credit-card"></i> Payment Methods</a></li>
+                <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+                <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                <li class="logout"><a asp-page="/SignIn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <section class="main-content">
+        <h1>My Account</h1>
+
+        <div class="personal-info-card">
+            <h2>Personal Information</h2>
+            <div class="info-container">
+                <div class="profile-section">
+                    <div class="profile-pic-wrapper">
+                        <img src="~/images/profile/1.png" alt="@Model.FullName" class="profile-pic">
+                        <a asp-page="/ProfileEdit" class="edit-icon" style="text-decoration: none; color: inherit;"><i class="fas fa-pen"></i></a>
+                    </div>
+                    <div class="info-fields">
+                        <div class="field-group">
+                            <div class="info-field">
+                                <span class="field-label">Full Name</span>
+                                <span class="field-value">@Model.FullName</span>
+                            </div>
+                            <div class="info-field">
+                                <span class="field-label">Phone Number</span>
+                                <span class="field-value">@Model.PhoneNumber</span>
+                            </div>
+                        </div>
+                        <div class="field-group">
+                            <div class="info-field">
+                                <span class="field-label">Email</span>
+                                <span class="field-value">@Model.Email</span>
+                            </div>
+                            <div class="info-field">
+                                <span class="field-label">Member Since</span>
+                                <span class="field-value">@Model.MemberSince</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="edit-btn-wrapper">
+                    <a asp-page="/ProfileEdit" class="edit-btn">Edit</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="addresses-card">
+            <div class="addresses-header">
+                <h2>Saved Addresses</h2>
+                <a href="#" class="add-new-address-link">Add New Address</a>
+            </div>
+
+            @foreach (var address in Model.Addresses)
+            {
+                <div class="address-item">
+                    <div class="address-details">
+                        <h3 class="address-name">@address.Name</h3>
+                        <p class="address-text">@Html.Raw(address.AddressText)</p>
+                        <div class="action-links">
+                            <a href="#" class="edit-link">Edit</a>
+                            @if (!address.IsDefault)
+                            {
+                                <a href="#" class="set-default-link">Set as Default</a>
+                            }
+                            <a href="#" class="delete-link">Delete</a>
+                        </div>
+                    </div>
+                    @if (address.IsDefault)
+                    {
+                        <span class="default-badge">Default</span>
+                    }
+                </div>
+            }
+        </div>
+    </section>
+</main>
+

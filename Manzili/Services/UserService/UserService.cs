@@ -24,7 +24,7 @@ namespace Manzili.Services.UserService
             if (await _userRepo.EmailExists(signVm.Email))
                 return false;
 
-            var hash = _hasher.HashPassword(signVm.Email, signVm.Password);
+            string hash = _hasher.HashPassword(null, signVm.Password);
 
             User user = new User
             {
@@ -44,7 +44,7 @@ namespace Manzili.Services.UserService
             var user = await _userRepo.GetByEmailAsync(login.Email);
             if (user == null) return null;
 
-            var result =  _hasher.VerifyHashedPassword(login.Email, user.PasswordHash, login.Password);
+            var result =  _hasher.VerifyHashedPassword(null, user.PasswordHash, login.Password);
             return result == PasswordVerificationResult.Success ? user : null;
         }
 

@@ -1,4 +1,6 @@
-wwwroot\css\SignIn.css
+wwwroot\css\profile.css
+wwwroot\css\signin.css
+wwwroot\css\signup.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\js\site.js

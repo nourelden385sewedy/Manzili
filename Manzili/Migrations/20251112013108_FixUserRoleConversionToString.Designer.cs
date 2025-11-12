@@ -4,6 +4,7 @@ using Manzili;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Manzili.Migrations
 {
     [DbContext(typeof(ManziliDbContext))]
-    partial class ManziliDbContextModelSnapshot : ModelSnapshot
+    [Migration("20251112013108_FixUserRoleConversionToString")]
+    partial class FixUserRoleConversionToString
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -124,80 +127,6 @@ namespace Manzili.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedAt = new DateTime(2025, 9, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "ahmed@gmail.com",
-                            FullName = "Ahmed Hassan",
-                            IsBlocked = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEOSomiuxubMBJd0b5zXoknncaNtP/RAQaI0WXKeFr/Y6IUj0KtkekAaIVBcXuCVKcw==",
-                            PhoneNumber = "01012345678",
-                            Role = "Buyer",
-                            UpdatedAt = new DateTime(2025, 9, 26, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedAt = new DateTime(2025, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "mariam.adel@yahoo.com",
-                            FullName = "Mariam Adel",
-                            IsBlocked = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEI6LEv2N2bN7hLwOk4bNssWmJWtVtsxmLTVbV7BfjhP9edO+HeZpT8/uP5nJaL0Zuw==",
-                            PhoneNumber = "01098765432",
-                            Role = "Provider",
-                            UpdatedAt = new DateTime(2025, 11, 6, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedAt = new DateTime(2025, 10, 25, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "omarkhaled@outlook.com",
-                            FullName = "Omar Khaled",
-                            IsBlocked = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAEJgr4+Tct67j8lvvaKSFativH7UxHpBNTqqiKXYbGu38c3rnoyYVY95FKKK7Xak/qw==",
-                            PhoneNumber = "01029305160",
-                            Role = "Buyer",
-                            UpdatedAt = new DateTime(2025, 10, 25, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedAt = new DateTime(2025, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "sarah.nabil@gmail.com",
-                            FullName = "Sarah Nabil",
-                            IsBlocked = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAELYaREqWkrIFh6BXmAArd01j3bX0u9t9vzcNNYbrYcWPOeDjh426NzplDJODTAELBw==",
-                            PhoneNumber = "01022223333",
-                            Role = "Provider",
-                            UpdatedAt = new DateTime(2025, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedAt = new DateTime(2025, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "youssef.m@gmail.com",
-                            FullName = "Youssef Mahmoud",
-                            IsBlocked = true,
-                            PasswordHash = "AQAAAAIAAYagAAAAEBWwjjjUJO352Z7FseYUi1iJRsrh0c7uTS7rjfyEimExmhH+z8wXSK+oqenCPoClKw==",
-                            PhoneNumber = "01044445555",
-                            Role = "Provider",
-                            UpdatedAt = new DateTime(2025, 10, 9, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatedAt = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Email = "laila.samir@icloud.com",
-                            FullName = "Laila Samir",
-                            IsBlocked = false,
-                            PasswordHash = "AQAAAAIAAYagAAAAELYFzPVNGLj6Pxk1hHPP9twcePfSf9lov8Qzg/SVG2a4Hkg6ryXquePXtWdmWKzzRg==",
-                            PhoneNumber = "01055556666",
-                            Role = "Buyer",
-                            UpdatedAt = new DateTime(2025, 11, 3, 0, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
                 });
 
             modelBuilder.Entity("Manzili.Models.Address", b =>
