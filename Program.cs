@@ -2,6 +2,7 @@ using Manzili.Data;
 using Manzili.Repositories.AdressRepository;
 using Manzili.Repositories.GenericRepository;
 using Manzili.Repositories.UserRepository;
+using Manzili.Services.UserService;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,6 +21,8 @@ builder.Services.AddScoped<IUserRepo, UserRepo>();
 builder.Services.AddScoped<IAddressRepo, AddressRepo>();
 
 // 3. Services
+builder.Services.AddScoped<IUserService, UserService>();
+
 
 
 
@@ -42,6 +45,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=User}/{action=SignIn}/{id?}");
 
 app.Run();

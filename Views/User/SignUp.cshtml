@@ -1,0 +1,221 @@
+﻿@model Manzili.ViewModels.SignUpVM
+
+@{
+    ViewData["Title"] = "Sign Up - Manzili";
+}
+
+<head>
+    <!-- SignUp-only CSS -->
+    <link rel="stylesheet" href="~/css/signup.css" />
+</head>
+
+<body>
+    <!-- ===== NAVBAR ===== -->
+    <header class="navbar">
+        <div class="logo">Manzili</div>
+        <nav>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                <li><a href="#"><i class="fas fa-user-circle"></i> Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ===== MAIN WRAPPER ===== -->
+    <main class="main-content">
+
+        <section class="sign-up-section">
+
+            <h2 class="page-title">Create your account</h2>
+            <p class="page-subtitle">
+                Or <a asp-controller="User" asp-action="SignIn" class="sign-in-link">sign in to your account</a>
+            </p>
+
+            <div class="form-card">
+
+                <!-- USER TYPE SWITCH -->
+                <div class="user-type-tabs">
+                    <label class="tab-label">
+                        <input asp-for="isSeller" type="radio" value="false" class="tab-radio" />
+                        <span class="tab-button"><i class="fas fa-shopping-cart"></i> Buyer</span>
+                    </label>
+
+                    <label class="tab-label">
+                        <input asp-for="isSeller" type="radio" value="true" class="tab-radio" />
+                        <span class="tab-button"><i class="fas fa-store"></i> Seller</span>
+                    </label>
+                </div>
+
+                <!-- SIGN-UP FORM -->
+                <form asp-controller="User" asp-action="Register" method="post" class="sign-up-form">
+
+                    <!-- FIRST/LAST NAME ROW -->
+                    <div class="form-row">
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-group">
+                            <label asp-for="FName" class="form-label">First name</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input asp-for="FName" class="form-input" placeholder="ex. Mohamed" />
+                            </div>
+                            <span asp-validation-for="FName" class="text-danger" style="color:red"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="LName" class="form-label">Last name</label>
+                            <div class="input-wrapper">
+                                <i class="fas fa-user input-icon"></i>
+                                <input asp-for="LName" class="form-input" placeholder="ex. Ahmed Sayed" />
+                            </div>
+                            <span asp-validation-for="LName" class="text-danger" style="color:red"></span>
+                        </div>
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+                        <label asp-for="Email" class="form-label">Email address</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-envelope input-icon"></i>
+                            <input asp-for="Email" class="form-input" placeholder="example@gmail.com" />
+                        </div>
+                        <span asp-validation-for="Email" class="text-danger" style="color:red"></span>
+                    </div>
+
+                    <!-- PASSWORD -->
+                    <div class="form-group">
+                        <label asp-for="Password" class="form-label">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock input-icon"></i>
+
+                            <input asp-for="Password" type="password" class="form-input" placeholder="••••••••" id="passwordField" />
+
+                            <label class="password-toggle">
+                                <input type="checkbox" id="togglePassword" style="display:none" />
+                                <i class="fas fa-eye-slash toggle-icon"></i>
+                            </label>
+                        </div>
+                        <span asp-validation-for="Password" class="text-danger" style="color:red"></span>
+                    </div>
+
+                    <!-- TERMS -->
+                    <div class="form-footer">
+                        <label class="terms-checkbox">
+                            <input type="checkbox" id="agreeTerms" />
+                            <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="sign-up-btn">Sign Up</button>
+                </form>
+
+                <!-- DIVIDER -->
+                <div class="divider"><span>Or continue with</span></div>
+
+                <!-- SOCIAL LOGIN -->
+                <div class="social-buttons">
+                    <button class="social-btn facebook-btn"><i class="fab fa-facebook-f"></i></button>
+                    <button class="social-btn google-btn"><img src="~/images/SignImages/2.png" alt="Google" style="width:28px" /></button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ===== PASSWORD TOGGLE SCRIPT ===== -->
+    <script>
+        document.getElementById("togglePassword").addEventListener("change", function () {
+            const input = document.getElementById("passwordField");
+            const icon = document.querySelector(".toggle-icon");
+
+            if (this.checked) {
+                input.type = "text";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            } else {
+                input.type = "password";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            }
+        });
+    </script>
+
+    <!-- ASP.NET Client validation -->
+    <partial name="_ValidationScriptsPartial" />
+
+    <!-- Alert Modal -->
+    <div class="alert-modal" id="alertModal">
+        <div class="alert-content">
+            <p id="alertMessage"></p>
+            <button id="closeAlert">OK</button>
+        </div>
+    </div>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+
+        <script>
+            // Password toggle
+            const passwordInput = document.getElementById('password');
+            const toggleCheckbox = document.querySelector('.toggle-checkbox');
+            const toggleIcon = document.querySelector('.toggle-icon');
+
+            toggleCheckbox.addEventListener('change', function () {
+                if (this.checked) {
+                    passwordInput.type = 'text';
+                    toggleIcon.classList.replace('fa-eye-slash', 'fa-eye');
+                } else {
+                    passwordInput.type = 'password';
+                    toggleIcon.classList.replace('fa-eye', 'fa-eye-slash');
+                }
+            });
+
+            // Handle Buyer/Seller selection
+            const sellerRadio = document.querySelector('input[value="seller"]');
+            const buyerRadio = document.querySelector('input[value="buyer"]');
+            const isSellerInput = document.getElementById('isSeller');
+
+            function updateUserType() {
+                isSellerInput.value = sellerRadio.checked ? "true" : "false";
+            }
+
+            sellerRadio.addEventListener('change', updateUserType);
+            buyerRadio.addEventListener('change', updateUserType);
+
+            // Custom alert modal
+            const alertModal = document.getElementById('alertModal');
+            const alertMessage = document.getElementById('alertMessage');
+            const closeAlert = document.getElementById('closeAlert');
+
+            function showAlert(message) {
+                alertMessage.textContent = message;
+                alertModal.style.display = 'flex';
+            }
+
+            closeAlert.addEventListener('click', () => {
+                alertModal.style.display = 'none';
+            });
+
+            // Display alert if TempData["AlertMessage"] is set (from controller)
+            document.addEventListener("DOMContentLoaded", function () {
+                const serverMessage = '@TempData["AlertMessage"]';
+                if (serverMessage) showAlert(serverMessage);
+            });
+
+            // Terms check on submit
+            document.querySelector('.sign-up-form').addEventListener('submit', function (e) {
+                const agreeTerms = document.getElementById('agreeTerms').checked;
+                if (!agreeTerms) {
+                    e.preventDefault();
+                    showAlert('Please agree to the terms and conditions');
+                    return;
+                }
+            });
+        </script>
+    }
+</body>
+
+
