@@ -30,8 +30,7 @@ namespace Manzili.Controllers
                 return View("SignIn");
             }
 
-            // TODO: Add authentication/session logic
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Profile");
         }
 
         // -------------------------
@@ -56,10 +55,13 @@ namespace Manzili.Controllers
                 return View("SignUp");
             }
 
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Profile");
         }
 
         // -------------------------
+
+        [HttpGet]
+        public async Task<IActionResult> Profile() => View("Profile");
 
     }
 }
