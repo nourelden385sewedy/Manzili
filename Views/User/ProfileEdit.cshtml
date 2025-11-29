@@ -1,0 +1,152 @@
+﻿@model ProfileEditVM
+
+@{
+    ViewData["Title"] = "Profile - Manzili";
+    Layout = "_Layout";
+}
+
+<head>
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="~/css/profile.css" />
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">Manzili</div>
+        <nav>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-controller="Services" asp-action="Index">Services</a></li>
+                <li><a asp-controller="Cart" asp-action="Index"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                <li><a asp-controller="User" asp-action="Profile"><i class="fas fa-user-circle"></i> Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="my-account-layout">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="#"><i class="fas fa-box"></i> Orders</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i> Favorites</a></li>
+                    <li><a href="#"><i class="fas fa-credit-card"></i> Payment Methods</a></li>
+                    <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="main-content">
+            <h1>My Account</h1>
+
+            <!-- PERSONAL INFORMATION -->
+            <div class="personal-info-card">
+                <h2>Personal Information</h2>
+
+                <form asp-controller="User" asp-action="SaveProfile" method="post">
+                    <input type="hidden" asp-for="Id" />
+
+                    <div class="info-container">
+                        <div class="profile-section">
+                            <div class="profile-pic-wrapper">
+                                <img src="https://i.pravatar.cc/150?img=47" alt="Profile Picture" class="profile-pic" />
+                                <span class="edit-icon"><i class="fas fa-pen"></i></span>
+                            </div>
+
+                            <div class="info-fields">
+
+                                <div class="field-group">
+                                    <!-- FULL NAME -->
+                                    <div class="info-field">
+                                        <span class="field-label">Full Name</span>
+                                        <input asp-for="FullName" class="field-input" />
+                                        <span asp-validation-for="FullName" class="text-danger"></span>
+                                    </div>
+
+                                    <!-- PHONE -->
+                                    <div class="info-field">
+                                        <span class="field-label">Phone Number</span>
+                                        <input asp-for="PhoneNumber" class="field-input" />
+                                        <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                                    </div>
+                                </div>
+
+                                <div class="field-group">
+
+                                    <!-- EMAIL (locked) -->
+                                    <div class="info-field">
+                                        <span class="field-label">Email</span>
+                                        <input asp-for="Email" class="field-input" disabled />
+                                    </div>
+
+                                    <div class="info-field">
+                                        <span class="field-label">Member Since</span>
+                                        <span class="field-value">January 2022</span>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="edit-btn-wrapper">
+                            <button type="submit" class="edit-btn">Save Changes</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            <!-- ADDRESSES -->
+            <div class="addresses-card">
+                <div class="addresses-header">
+                    <h2>Saved Addresses</h2>
+                    <a asp-controller="User" asp-action="AddAddress" class="add-new-address-link">Add New Address</a>
+                </div>
+
+                @if (Model.Addresses == null || !Model.Addresses.Any())
+                {
+                    <p>You don't have any saved addresses yet.</p>
+                }
+                else
+                {
+                    foreach (var address in Model.Addresses)
+                    {
+                        <div class="address-item">
+                            <div class="address-details">
+                                <h3 class="address-name">@address.City</h3>
+                                <p class="address-text">@address.Country</p>
+
+                                <div class="action-links">
+                                    <a asp-controller="User" asp-action="EditAddress" asp-route-id="@address.Id" class="edit-link">Edit</a>
+                                    <a asp-controller="User" asp-action="DeleteAddress" asp-route-id="@address.Id" class="delete-link">Delete</a>
+                                </div>
+                            </div>
+
+                            @if (address.IsDefault)
+                            {
+                                <span class="default-badge">Default</span>
+                            }
+                            else
+                            {
+                                <a asp-controller="User" asp-action="SetDefaultAddress" asp-route-id="@address.Id" class="set-default-link">
+                                    Set as Default
+                                </a>
+                            }
+                        </div>
+                    }
+                }
+            </div>
+
+        </section>
+
+    </main>
+
+    @section Scripts {
+        <partial name="_ValidationScriptsPartial" />
+    }
+</body>

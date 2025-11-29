@@ -8,17 +8,24 @@ namespace Manzili.Data.Models
         [Key]
         public int Id { get; set; }
 
+        [MaxLength(50)]
+        public string? Label { get; set; }
+
         [Required, MaxLength(50)]
         public string Government { get; set; } = string.Empty;
 
         [Required, MaxLength(50)]
         public string City { get; set; } = string.Empty;
 
+        [Required, MaxLength(500)]
+        public string FullAddress { get; set; } = string.Empty;
+
+        // may be needed or not
         [MaxLength(50)]
         public string? PostalCode { get; set; }
 
-        [Required, MaxLength(50)]
-        public string Country { get; set; } = string.Empty;
+        //[Required, MaxLength(50)] // Defualt Egypt right now
+        //public string Country { get; set; } = string.Empty;
 
         [MaxLength(500)]
         public string? DeliveryNotes { get; set; }

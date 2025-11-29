@@ -30,7 +30,7 @@ namespace Manzili.Controllers
                 return View("SignIn");
             }
 
-            return RedirectToAction("Profile");
+            return RedirectToAction("Index", "Home");
         }
 
         // -------------------------
@@ -55,7 +55,7 @@ namespace Manzili.Controllers
                 return View("SignUp");
             }
 
-            return RedirectToAction("Profile");
+            return RedirectToAction("ProfileEdit");
         }
 
         // -------------------------
@@ -63,6 +63,170 @@ namespace Manzili.Controllers
         [HttpGet]
         public async Task<IActionResult> Profile() => View("Profile");
 
+
+        [HttpGet]
+        public async Task<IActionResult> ProfileEdit() => View("ProfileEdit");
+
     }
 }
 
+/* Profile page edit */
+
+/*
+<body>
+
+    <header class="navbar">
+        <div class="logo">Manzili</div>
+        <nav>
+            <ul>
+                <li><a asp-controller="Home" asp-action="Index">Home</a></li>
+                <li><a asp-controller="Services" asp-action="Index">Services</a></li>
+                <li><a asp-controller="Cart" asp-action="Index"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+                <li><a asp-controller="User" asp-action="Profile"><i class="fas fa-user-circle"></i> Profile</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="my-account-layout">
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="#"><i class="fas fa-box"></i> Orders</a></li>
+                    <li><a href="#"><i class="fas fa-heart"></i> Favorites</a></li>
+                    <li><a href="#"><i class="fas fa-credit-card"></i> Payment Methods</a></li>
+                    <li><a href="#"><i class="fas fa-bell"></i> Notifications</a></li>
+                    <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li class="logout"><a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="main-content">
+            <h1>My Account</h1>
+
+            <div class="personal-info-card">
+                <h2>Personal Information</h2>
+                <div class="info-container">
+                    <div class="profile-section">
+                        <div class="profile-pic-wrapper">
+                            <img src="https://i.pravatar.cc/150?img=47" alt="Sara Ahmed" class="profile-pic" />
+                            <span class="edit-icon"><i class="fas fa-pen"></i></span>
+                        </div>
+
+                        <div class="info-fields">
+                            <div class="field-group">
+                                <div class="info-field">
+                                    <span class="field-label">Full Name</span>
+                                    <span class="field-value">Sara Ahmed</span>
+                                </div>
+                                <div class="info-field">
+                                    <span class="field-label">Phone Number</span>
+                                    <span class="field-value">+971 50 123 4567</span>
+                                </div>
+                            </div>
+
+                            <div class="field-group">
+                                <div class="info-field">
+                                    <span class="field-label">Email</span>
+                                    <span class="field-value">sara.ahmed@example.com</span>
+                                </div>
+                                <div class="info-field">
+                                    <span class="field-label">Member Since</span>
+                                    <span class="field-value">January 2022</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="edit-btn-wrapper">
+                        <button class="edit-btn">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="addresses-card">
+                <div class="addresses-header">
+                    <h2>Saved Addresses</h2>
+                    <a href="#" class="add-new-address-link">Add New Address</a>
+                </div>
+
+                <div class="address-item">
+                    <div class="address-details">
+                        <h3 class="address-name">Home</h3>
+                        <p class="address-text">123 Palm Avenue<br />Dubai</p>
+
+                        <div class="action-links">
+                            <a href="#" class="edit-link">Edit</a>
+                            <a href="#" class="delete-link">Delete</a>
+                        </div>
+                    </div>
+
+                    <span class="default-badge">Default</span>
+                </div>
+
+                <div class="address-item">
+                    <div class="address-details">
+                        <h3 class="address-name">Work</h3>
+                        <p class="address-text">456 Business Bay<br />Dubai</p>
+
+                        <div class="action-links">
+                            <a href="#" class="edit-link">Edit</a>
+                            <a href="#" class="set-default-link">Set as Default</a>
+                            <a href="#" class="delete-link">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h3>About Manzili</h3>
+                <p>Manzili connects you with trusted local service providers for food, handmade goods, and more.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Become a Seller</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                <h3>Policies</h3>
+                <ul>
+                    <li><a href="#">Terms of Use</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-section contact-info">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-phone"></i> +123 456 7890</p>
+                <p><i class="fas fa-envelope"></i> support@manzili.com</p>
+
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 Manzili. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+ 
+*/
